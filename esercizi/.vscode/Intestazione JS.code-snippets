@@ -1,0 +1,14 @@
+{
+  "File Header": {
+    "prefix": "intestazione",
+    "body": [
+      "/**",
+      " * @file: $TM_FILENAME",
+      " * @author: Nicolò Galizia",
+      " *",
+      " *",
+      " */"
+    ],
+    "description": "File Header Template"
+  }
+}
