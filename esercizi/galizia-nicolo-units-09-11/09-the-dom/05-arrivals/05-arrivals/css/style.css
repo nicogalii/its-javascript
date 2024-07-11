@@ -40,3 +40,15 @@ main table td {
 main tbody tr:nth-child() {
     background-color: gray;
 }
+
+.on-time {
+    color: green;
+}
+
+.delayed {
+    color: red;
+}
+
+.arrived {
+    color: black;
+}

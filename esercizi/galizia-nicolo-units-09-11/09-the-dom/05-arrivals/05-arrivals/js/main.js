@@ -215,6 +215,8 @@ function updateRandomStatus() {
             // Impost a random status between "ON TIME" and "DELAYED"
             const randomStatus = selectStatusFly[Math.floor(Math.random() * selectStatusFly.length)];
             updateStatusFlights[i].textContent = randomStatus;
+
+            colorStatus();
         }
     }
 }
@@ -246,21 +248,34 @@ function deleteArrivedStatus() {
         if (deleteFlights[i].textContent === "ARRIVED") {
             const row = deleteFlights[i].parentNode;
             row.parentNode.removeChild(row);
-
         }
     }
 }
 
+// TODO: Da modificare
 function colorStatus() {
-
+    const flights = document.querySelectorAll("tbody .status");
+    for (let i = 0; i < flights.length; i++) {
+        if (flights[i].textContent === "ON TIME") {
+            flights[i].classList.remove('delayed');
+            flights[i].classList.add('on-time');
+        } else if (flights[i].textContent === "DELAYED") {
+            flights[i].classList.remove('on-time');
+            flights[i].classList.add('delayed');
+        } else if (flights[i].textContent === "ARRIVED") {
+            flights[i].classList.remove('on-time');
+            flights[i].classList.remove('delayed');
+        }
+    }
 }
-
 
 // Schedule after 10 seconds function `renderFlights`
 setTimeout(renderFlights, 1000);
 
 // Esegui la funzione per aggiornare gli stati dei voli
-setInterval(updateStatusFly, 5000);
+setInterval(updateStatusFly, 10000);
+
+
 
 // Remuve the fly wiyh status "ARRIVED"
-setInterval(deleteArrivedStatus, 3000);
+setInterval(deleteArrivedStatus, 60000);
