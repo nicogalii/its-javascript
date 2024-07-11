@@ -1,0 +1,42 @@
+html {
+    font-size: 16px;
+}
+
+
+header h1 {
+    padding: 5px 5px 5px 50px;
+    color: #006AC6;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+header img {
+    width: 100%;
+    height: auto;
+}
+
+main {
+    padding: 20px;
+    margin: 0 auto;
+}
+
+main table {
+    width: 100%;
+    text-align: center;
+
+}
+
+main table th {
+    color: #006AC6;
+    font-weight: 600;
+}
+
+main table th,
+main table td {
+    border: 1px solid #006AC6;
+    padding: 5px;
+}
+
+main tbody tr:nth-child() {
+    background-color: gray;
+}
