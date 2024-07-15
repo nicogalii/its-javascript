@@ -230,18 +230,20 @@ function updateStatusFly() {
     for (let i = 0; i < updateStatusFlights.length; i++) {
 
         // Shedule the function `updateRandomStatus` after 5 seconds
-        setInterval(updateRandomStatus, 5000);
+        setInterval(updateRandomStatus, 8000);
 
         // Shedule every 8 seconds the chage of the status in "ARRIVED"
         setInterval(() => {
             if (updateStatusFlights[i].textContent !== "ARRIVED") {
                 updateStatusFlights[i].textContent = statusFlights[2];
             }
-        }, 8000);
+        }, 12000);
     }
 }
 
-
+/**
+ * Delete of the status "ARRIVED" after 60 seconds
+ */
 function deleteArrivedStatus() {
     const deleteFlights = document.querySelectorAll("tbody .status");
     for (let i = 0; i < deleteFlights.length; i++) {
@@ -259,23 +261,18 @@ function colorStatus() {
         if (flights[i].textContent === "ON TIME") {
             flights[i].classList.remove('delayed');
             flights[i].classList.add('on-time');
-        } else if (flights[i].textContent === "DELAYED") {
+        } else {
             flights[i].classList.remove('on-time');
             flights[i].classList.add('delayed');
-        } else if (flights[i].textContent === "ARRIVED") {
-            flights[i].classList.remove('on-time');
-            flights[i].classList.remove('delayed');
         }
     }
 }
 
 // Schedule after 10 seconds function `renderFlights`
-setTimeout(renderFlights, 1000);
+setTimeout(renderFlights, 10000);
 
 // Esegui la funzione per aggiornare gli stati dei voli
 setInterval(updateStatusFly, 10000);
 
-
-
 // Remuve the fly wiyh status "ARRIVED"
-setInterval(deleteArrivedStatus, 60000);
+setTimeout(deleteArrivedStatus, 60000);

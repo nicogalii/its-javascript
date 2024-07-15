@@ -48,7 +48,3 @@ main tbody tr:nth-child() {
 .delayed {
     color: red;
 }
-
-.arrived {
-    color: black;
-}
