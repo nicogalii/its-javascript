@@ -242,7 +242,7 @@ function updateStatusFly() {
 }
 
 /**
- * Delete of the status "ARRIVED" after 60 seconds
+ * Delete of the status "ARRIVED"
  */
 function deleteArrivedStatus() {
     const deleteFlights = document.querySelectorAll("tbody .status");
@@ -254,7 +254,9 @@ function deleteArrivedStatus() {
     }
 }
 
-// TODO: Da modificare
+/**
+ * Change the color status
+ */
 function colorStatus() {
     const flights = document.querySelectorAll("tbody .status");
     for (let i = 0; i < flights.length; i++) {
@@ -271,7 +273,7 @@ function colorStatus() {
 // Schedule after 10 seconds function `renderFlights`
 setTimeout(renderFlights, 10000);
 
-// Esegui la funzione per aggiornare gli stati dei voli
+// Schedule the function every 7 seconds
 setInterval(updateStatusFly, 10000);
 
 // Remuve the fly wiyh status "ARRIVED"
