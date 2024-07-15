@@ -1,0 +1,11 @@
+{
+  "name": "Fiat",
+  "location": "Torino, Italia",
+  "established": 1899,
+  "departments": ["Assembly", "Painting", "Quality Control"],
+  "manager": {
+    "name": "Giovanni",
+    "surname": "Agnelli"
+  },
+  "recentUpgrade": null
+}
