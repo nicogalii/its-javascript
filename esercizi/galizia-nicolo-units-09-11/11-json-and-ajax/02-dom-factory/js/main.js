@@ -85,9 +85,55 @@ let cars = `{
     ]
 }`;
 
-cars = JSON.parse(cars);
 
-console.log(cars.modelCars[0]);
 
+let carsObject = JSON.parse(cars);
+
+let body = document.querySelector("body");
+const unorderList = document.createElement("ul");
+
+body.appendChild(unorderList);
+
+const createList = (value, key) => {
+    const list = document.createElement("li");
+    list.textContent = key + ": " + value;
+    unorderList.appendChild(list);
+}
+
+// Loop of the different model cars
+for (let i = 0; i < carsObject.modelCars.length; i++) {
+    const key = Object.keys(carsObject.modelCars[i]);
+    console.log(key);
+    createList(carsObject.modelCars[i].make, key[0]);
+    createList(carsObject.modelCars[i].model, key[1]);
+    createList(carsObject.modelCars[i].year, key[2]);
+    createList(carsObject.modelCars[i].isElectric, key[3]);
+    // Loop of the different features of the cars
+    for (let j = 0; j < carsObject.modelCars[i].features.length; j++) {
+        createList(carsObject.modelCars[i].features[j]);
+    };
+    createList(carsObject.modelCars[i].owner.name);
+    createList(carsObject.modelCars[i].owner.surname);
+    createList(carsObject.modelCars[i].owner.license);
+    createList(carsObject.modelCars[i].previousOwners);
+};
+
+// carsObject.modelCars.forEach(car => {
+//     console.log(car.make);
+//     console.log(car.model);
+//     console.log(car.isElectric);
+//     car.features.forEach(feat => {
+//         console.log(feat);
+//     });
+
+//     console.log(car.owner.name);
+//     console.log(car.owner.surname);
+//     console.log(car.owner.license);
+//     console.log(car.previousOwners);
+//     console.log("---------------------------------");
+//     // car.unorderList.appendChild(list);
+// });
+
+// unorderList.list.cars.carsObject[0];
 
 
