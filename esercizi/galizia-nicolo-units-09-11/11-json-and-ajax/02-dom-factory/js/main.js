@@ -100,6 +100,7 @@ const createList = (value, key) => {
     unorderList.appendChild(list);
 }
 
+// FIXME: aggiustare le key e i value
 // Loop of the different model cars
 for (let i = 0; i < carsObject.modelCars.length; i++) {
     const key = Object.keys(carsObject.modelCars[i]);
