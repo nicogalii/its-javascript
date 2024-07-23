@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /**
      * Moves the cat continuously from left to right.
-     * When the cat reaches the right edge, it restarts from the left edge.
      */
     const catWalk1 = () => {
         let newPos = parseInt(image.style.left) + 10; // Calculate new position by adding 10 pixels
@@ -21,17 +20,19 @@ document.addEventListener("DOMContentLoaded", function () {
             newPos = 0;
         }
 
-        image.style.left = newPos + "px"; // Update the cat's position
+        // Update the position of the cat
+        image.style.left = newPos + "px";
     };
 
     /**
      * Moves the cat back and forth across the screen.
-     * Reverses direction when the cat reaches either the left or right edge.
      */
     const catWalk2 = () => {
-        let newPos = parseInt(image.style.left) + 10 * direction; // Update position based on direction
+        // Update the position based on the side
+        let newPos = parseInt(image.style.left) + 10 * direction;
 
-        image.style.left = newPos + "px"; // Set the new position
+        // Set the new position of the cat
+        image.style.left = newPos + "px";
 
         // Reverse direction if the cat reaches the right or left edge
         if (newPos > window.innerWidth - image.width - 1) {
@@ -41,5 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
+    // Shedule the function after 50ms
     setInterval(catWalk2, 50);
 });
