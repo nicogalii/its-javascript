@@ -6,10 +6,9 @@
 */
 
 /**
- * Descrizione della funzione
- * @param {TipoInput1} NomeInput1 - DescrizioneInput1
- * @param {TipoInput2} NomeInput2 - DescrizioneInput2
- * @returns {TipoOutput} - DescrizioneOutput
+ * Calculates the square of a number
+ * @param {number} number - The number to be squared
+ * @returns {number} - The square of the number
  */
 function squareNumber(number) {
     let result = number * number;
@@ -17,10 +16,9 @@ function squareNumber(number) {
 }
 
 /**
- * Descrizione della funzione
- * @param {TipoInput1} NomeInput1 - DescrizioneInput1
- * @param {TipoInput2} NomeInput2 - DescrizioneInput2
- * @returns {TipoOutput} - DescrizioneOutput
+ * Calculates half of a number
+ * @param {number} number - The number to be halved
+ * @returns {number} - Half of the number
  */
 function halfNumber(number) {
     let result = number / 2;
@@ -28,10 +26,10 @@ function halfNumber(number) {
 }
 
 /**
- * Descrizione della funzione
- * @param {TipoInput1} NomeInput1 - DescrizioneInput1
- * @param {TipoInput2} NomeInput2 - DescrizioneInput2
- * @returns {TipoOutput} - DescrizioneOutput
+ * Calculates the percentage of a number
+ * @param {number} number - The number on which to calculate the percentage
+ * @param {number} percentage - The percentage to calculate
+ * @returns {number} - The percentage of the number
  */
 function percentage(number, percentage) {
     let result = (number * percentage) / 100;
@@ -39,10 +37,9 @@ function percentage(number, percentage) {
 }
 
 /**
- * Descrizione della funzione
- * @param {TipoInput1} NomeInput1 - DescrizioneInput1
- * @param {TipoInput2} NomeInput2 - DescrizioneInput2
- * @returns {TipoOutput} - DescrizioneOutput
+ * Calculates the area of a circle given the radius
+ * @param {number} radius - The radius of the circle
+ * @returns {number} - The area of the circle
  */
 function areaOfCircle(radius) {
     let result = Math.PI * radius * radius;
@@ -56,14 +53,14 @@ document.getElementById('square-button').addEventListener('click', function () {
     document.getElementById('solution').textContent = `Il quadrato di ${number} è ${result}`;
 });
 
-// Add an event listener to the buttom to calcolate the square of a number
+// Add an event listener to the buttom to calcolate the half of a number
 document.getElementById('half-button').addEventListener('click', function () {
     const number = document.getElementById('half-input').value;
     const result = halfNumber(number);
     document.getElementById('solution').textContent = `La metà di ${number} è ${result}`;
 });
 
-// Add an event listener to the buttom to calcolate the square of a number
+// Add an event listener to the buttom to calcolate the percentage of a number
 document.getElementById('percentage-button').addEventListener('click', function () {
     const number = document.getElementById('percentage-input-one').value;
     const perc = document.getElementById('percentage-input-two').value;

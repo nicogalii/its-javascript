@@ -1,7 +1,7 @@
-/**
-* style.css
-*/
-.list-item {
-    background-color: orange;
-    color: white;
+.read {
+    color: green;
+}
+
+.unread {
+    color: red;
 }
