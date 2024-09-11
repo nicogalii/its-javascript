@@ -16,8 +16,10 @@ function clickButtom() {
     checkbox.addEventListener('click', function () {
         if (this.checked) {
             document.body.classList.add('night-mode');
+            // document.body.classList.add('light');
         } else {
             document.body.classList.remove('night-mode');
+            // document.body.classList.remove('night-mode');
         }
     });
 };
