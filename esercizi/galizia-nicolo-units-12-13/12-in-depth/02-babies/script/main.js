@@ -16,20 +16,6 @@
  *      ○ Outfit should describes at least 3 parts of their clothing using different properties, for 
  *        example, "shirt": "blue"
  *      ○ Print each baby again with their outfit in a nicely formatted object.
- * 
- * 2.Bambini
- *  ● Crea una serie vuota di bambini
- *  ● Ogni bambino dovrebbe avere le seguenti proprietà
- *      ○ "nome" (una stringa) 
- *      ○ "mesi" (età in mesi come numero) 
- *      ○ "rumori" (un array di stringhe) 
- *      ○ "favoriteFoods" (un array di stringhe) 
- *  ● Aggiungi 4 bambini diversi all'array utilizzando quanti più modi possibili
- *  ● Scorrere le coppie chiave-valore di stampa dell'array, ad esempio [nome:”Lyla”]
- *  ● Ora aggiungi una proprietà "vestito" a ciascun bambino nell'array
- *      ○ L'outfit deve descrivere almeno 3 parti del proprio abbigliamento utilizzando proprietà diverse, ad es 
- *        esempio, "camicia": "blu"
- *      ○ Stampa di nuovo ogni bambino con il suo vestito in un oggetto ben formattato.
  */
 
 // Array of objects babies
@@ -65,10 +51,10 @@ babies.forEach(baby => {
     for (let key in baby) {
         // Check is an array
         if (Array.isArray(baby[key])) {
-            // the array becomes a string and print
+            // The array becomes a string and print
             console.log(`[${key}: "${baby[key].join(", ")}"]`);
         } else {
-            // print the value normally
+            // Print the value normally
             console.log(`[${key}: "${baby[key]}"]`);
         }
     }
@@ -76,17 +62,30 @@ babies.forEach(baby => {
     console.log('-------------------------');
 });
 
-// Add an "outfit" property to each baby
+// Array of the color to the outfit
+const shirtColors = ["blue", "green", "yellow", "red", "purple"];
+const pantsColors = ["black", "grey", "blue", "white", "red"];
+const shoesColors = ["white", "black", "brown", "pink", "yellow"];
+
+// Function to get a random color from an array
+function getRandomColor(colors) {
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    return colors[randomIndex];
+}
+
+// Add a random "outfit" property to each baby
 babies.forEach(baby => {
     baby.outfit = {
-        shirt: "blue",
-        pants: "red",
-        shoes: "black"
+        shirt: getRandomColor(shirtColors),
+        pants: getRandomColor(pantsColors),
+        shoes: getRandomColor(shoesColors)
     };
 });
+
 console.log("---------------------------------------------")
 console.log("------------------ BABIES -------------------")
 console.log("---------------------------------------------")
+
 // Print each baby with formatted
 babies.forEach(baby => {
     // Separator between babies
@@ -97,6 +96,7 @@ babies.forEach(baby => {
     console.log(`Favorite Foods: ${baby.favoriteFoods.join(", ")}`);
     console.log("Outfit:");
     for (let key in baby.outfit) {
+        // Output
         console.log(`  ${key}: ${baby.outfit[key]}`);
     }
 });
