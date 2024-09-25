@@ -42,9 +42,9 @@ babies.unshift({
 });
 
 // Array of the color to the outfit
-const shirtColors = ["blue", "green", "yellow", "red", "purple"];
-const pantsColors = ["black", "grey", "blue", "white", "red"];
-const shoesColors = ["white", "black", "brown", "pink", "yellow"];
+const shirtColors = ["blu", "verde", "giallo", "rosso", "viola"];
+const pantsColors = ["nero", "grigio", "blu", "bianco", "rosso"];
+const shoesColors = ["bianco", "nero", "marrone", "rosa", "giallo"];
 
 // Function to get a random color from an array
 function getRandomColor(colors) {
